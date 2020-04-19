@@ -1,82 +1,101 @@
-# Capibara Server
+# Flask Server Boilerplate
 
-One Paragraph of project description goes here
+A minimal ready-to-go Flask Server with minimal structure.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-```
-export DATABASE_URL=postgres://postgres:postgres@localhost:5432/capibara
-```
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+## Features
+- User authentication
+    - JWT
+    - Blacklist token on user logout
+- Structure Skeleton
+    - Controller
+    - Model
+    - Service
+    - DTO
+    - Decorator
+- Unit Tests
+- Database Configuration
+    - Default SQLite configuration
+    - Postgres database configuration as a second option
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+For this project, is recommended to have `Python3` installed.
 
+### Run
+
+Activate local environment
 ```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
+source env/bin/activate 
 ```
 
-And repeat
-
+Or, if you want to use your own interpreter get the dependencies using this command
 ```
-until finished
+pip install -r requirements.txt
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+Database Initialization
+```
+python managepy db init
+```
+
+Create a migration script from the detected changes in the model using the `migrate` command. This doesn't affect the database yet.
+```
+python manage.py db migrate --message 'initial database migration'
+```
+
+Apply the migration script to the database by using the `upgrade` command
+```
+python manage.py db upgrade
+```
+
+Run your server
+```
+python manage.py run
+```
+
+Open the following url on your browser to view swagger documentation
+```
+http://127.0.0.1:5000/
+```
+
+### Using Postman
+Authorization header is in the following format:
+```
+Key: Authorization
+Value: "token_generated_during_login"
+```
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+To run tests use the following command
 ```
-Give an example
+python manage.py test
 ```
 
-### And coding style tests
+Also, it's a good test for your local environment to check if is everything OK and ready to go.
 
-Explain what these tests test and why
+## TODO
+- [ ] Prerequisite details
+- [ ] Tests details
+- [ ] Deployment Steps
+- [ ] Versioning details
 
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
 
 ## Built With
 
-* [Flask](https://flask.palletsprojects.com/en/1.1.x/) - The web framework used
-* [Python3](https://www.python.org/download/releases/3.0/) - Language
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/) - Python minimal framework
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
-* **Luifer Villalba** - *Initial work* - [luifer-villalba](https://github.com/luifer-villalba)
-
-See also the list of [contributors](https://github.com/luifer-villalba/capibara/contributors) who participated in this project.
+* **Luifer Villalba** - [Github](https://github.com/luifer-villalba), [Resume](https://luifervillalba.com)
 
 ## License
 
@@ -84,6 +103,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* freeCodeCamp [Tutorial](https://www.freecodecamp.org/news/structuring-a-flask-restplus-web-service-for-production-builds-c2ec676de563/)
