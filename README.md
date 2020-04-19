@@ -20,6 +20,7 @@ These instructions will get you a copy of the project up and running on your loc
 - Database Configuration
     - Default SQLite configuration
     - Postgres database configuration as a second option
+- Issues and Pull Requests templates
 
 ### Prerequisites
 
