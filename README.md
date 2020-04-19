@@ -27,25 +27,47 @@ These instructions will get you a copy of the project up and running on your loc
 For this project, is recommended to have `Python3` installed.
 
 ### Run
+#### Installing virtual environment
+virtualenv is used to manage Python packages for different projects. Using virtualenv allows you to avoid installing Python packages globally which could break system tools or other projects. You can install virtualenv using pip.
+```
+python3 -m pip install --user virtualenv
+```
 
-Activate local environment
+####Creating a virtual environment
+Before you can start installing or using packages in your virtual environment you’ll need to activate it. Activating a virtual environment will put the virtual environment-specific python and pip executables into your shell’s PATH
+```
+python3 -m venv env
+```
+
+#### Activate local environment
+Before you can start installing or using packages in your virtual environment you’ll need to activate it. Activating a virtual environment will put the virtual environment-specific `python` and `pip` executables into your shell’s `PATH`.
 ```
 source env/bin/activate 
 ```
 
-Or, if you want to use your own interpreter get the dependencies using this command
+You can confirm you’re in the virtual environment by checking the location of your Python interpreter, it should point to the env directory.
+```
+which python
+```
+
+For deactivate the virtual environment
+```
+deactivate
+```
+
+Get the dependencies using this command
 ```
 pip install -r requirements.txt
 ```
 
-Database Initialization
+#### Database Initialization
 ```
-python managepy db init
+python manage.py db init
 ```
 
 Create a migration script from the detected changes in the model using the `migrate` command. This doesn't affect the database yet.
 ```
-python manage.py db migrate --message 'initial database migration'
+python manage.py db migrate --message 'Initial Database migration'
 ```
 
 Apply the migration script to the database by using the `upgrade` command
@@ -53,7 +75,7 @@ Apply the migration script to the database by using the `upgrade` command
 python manage.py db upgrade
 ```
 
-Run your server
+#### Run your server
 ```
 python manage.py run
 ```
@@ -100,8 +122,8 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
 
 ## Acknowledgments
 
-* freeCodeCamp [Tutorial](https://www.freecodecamp.org/news/structuring-a-flask-restplus-web-service-for-production-builds-c2ec676de563/)
+* FreeCodeCamp [Tutorial](https://www.freecodecamp.org/news/structuring-a-flask-restplus-web-service-for-production-builds-c2ec676de563/)
