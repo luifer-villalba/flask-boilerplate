@@ -114,3 +114,5 @@ dmypy.json
 
 # Internal files as databases
 *.db
+env/
+migrations/
