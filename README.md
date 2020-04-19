@@ -6,6 +6,19 @@ A minimal ready-to-go Flask Server with minimal structure.
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
+### Project Structure
+Specifically, folder structure and relevant files as `manage.py` and `requeriments.txt`.
+
+    ├── app
+    │   ├── main
+    │   │   ├── controller
+    │   │   ├── model
+    │   │   ├── service
+    │   │   └── util
+    │   └── test
+    ├── manage.py
+    └── requirements.txt
+
 ## Features
 - User authentication
     - JWT
