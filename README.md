@@ -33,7 +33,7 @@ virtualenv is used to manage Python packages for different projects. Using virtu
 python3 -m pip install --user virtualenv
 ```
 
-####Creating a virtual environment
+#### Creating a virtual environment
 Before you can start installing or using packages in your virtual environment you’ll need to activate it. Activating a virtual environment will put the virtual environment-specific python and pip executables into your shell’s PATH
 ```
 python3 -m venv env
