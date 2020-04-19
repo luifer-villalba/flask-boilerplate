@@ -27,18 +27,28 @@ These instructions will get you a copy of the project up and running on your loc
 For this project, is recommended to have `Python3` installed.
 
 ### Run
+####Creating a virtual environment
+Before you can start installing or using packages in your virtual environment you’ll need to activate it. Activating a virtual environment will put the virtual environment-specific python and pip executables into your shell’s PATH
+```
+python3 -m venv env
+```
 
-Activate local environment
+You can confirm you’re in the virtual environment by checking the location of your Python interpreter, it should point to the env directory.
+```
+which python
+```
+
+#### Activate local environment
 ```
 source env/bin/activate 
 ```
 
-Or, if you want to use your own interpreter get the dependencies using this command
+Get the dependencies using this command
 ```
 pip install -r requirements.txt
 ```
 
-Database Initialization
+#### Database Initialization
 ```
 python managepy db init
 ```
@@ -53,7 +63,7 @@ Apply the migration script to the database by using the `upgrade` command
 python manage.py db upgrade
 ```
 
-Run your server
+#### Run your server
 ```
 python manage.py run
 ```
