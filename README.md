@@ -53,12 +53,14 @@ python3 -m venv env
 ```
 
 #### Activate local environment
-Before you can start installing or using packages in your virtual environment you’ll need to activate it. Activating a virtual environment will put the virtual environment-specific `python` and `pip` executables into your shell’s `PATH`. For Linux,
+Before you can start installing or using packages in your virtual environment you’ll need to activate it. Activating a virtual environment will put the virtual environment-specific `python` and `pip` executables into your shell’s `PATH`. 
+
+For Linux:
 ```
 source env/bin/activate 
 ```
 
-For Windows
+For Windows:
 ```
 source env/Scripts/activate 
 ```
